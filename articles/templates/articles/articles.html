@@ -1,0 +1,60 @@
+{% extends "articles/base.html" %}
+{% block content %}
+<!-- Page Content -->
+<div class="articles">
+    <div class="container">
+
+        <div class="row">
+
+            <!-- Blog Entries Column -->
+            <div class="col-md-8">
+
+                <!-- <h1 class="my-4">Page Heading
+                    <small>Secondary Text</small>
+                </h1> -->
+                <br>
+
+                <!-- Blog Post -->
+                {% for article in articles %}
+                <div class="card mb-4">
+                    <img class="card-img-top" src="{{ article.mainImage.url }}" height=300 alt="Card image cap">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ article.title }}</h2>
+                        <p class="card-text">{{ article.summary }}</p>
+                        <a href="{% url 'reading' article.title %}" class="btn btn-primary float-right">Read More
+                            &rarr;</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        Posted on {{ article.published }} by {{ article.author }}
+
+                    </div>
+                </div>
+                {% endfor %}
+
+
+
+                <!-- Pagination -->
+                <ul class="pagination justify-content-center mb-4">
+                    <div class="pagination">
+                        <span class="step-links">
+                            {% if articles.has_previous %}
+                            <a href="?page=1">&laquo; first</a>
+                            <a href="?page={{ articles.previous_page_number }}">previous</a>
+                            {% endif %}
+
+                            <span class="current">
+                                Page {{ articles.number }} of {{ articles.paginator.num_pages }}.
+                            </span>
+
+                            {% if articles.has_next %}
+                            <a href="?page={{ articles.next_page_number }}">next</a>
+                            <a href="?page={{ articles.paginator.num_pages }}">last &raquo;</a>
+                            {% endif %}
+                        </span>
+                    </div>
+                </ul>
+
+            </div>
+
+
+            {% endblock %}

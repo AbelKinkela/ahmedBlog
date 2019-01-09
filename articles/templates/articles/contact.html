@@ -1,0 +1,68 @@
+{% extends "articles/base.html" %}
+{% block content %}
+
+<div class="contactBg">
+    <div class="container bg-light">
+        <div class="row">
+            <div class="col-sm-12 col-lg-12">
+                <h1>
+                    <small class="text-dark">Feel free to contact me</small></h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-8 pt-md-4">
+                <div class="row bg-light">
+                    <form class="col-md-6 ">
+
+                        <div class="form-group">
+                            <label for="contact-name">Name</label>
+                            <input type="text" class="form-control" id="contact-name" name="name" placeholder="Enter your name.."
+                                onkeyup='validateName()'>
+                            <span class='error-message' id='name-error'></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-email">Email address</label>
+                            <input type="email" class="form-control" id="contact-email" name="email" placeholder="Enter Email"
+                                onkeyup='validateEmail()'>
+                            <span class='error-message' id='email-error'></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for='contactMessage'>Your Message</label>
+                            <textarea class="form-control" id='contact-message' name='message' rows="9" cols="20"
+                                required="required" placeholder="Message" onkeyup='validateMessage()'></textarea>
+                            <span class='error-message' id='message-error'></span>
+                        </div>
+                        <div class="col-md-12">
+                            <button onclick='return validateForm()' type="submit" class="btn btn-primary pull-right float-right"
+                                id="btnContactUs">
+                                Send Message <i class='fas fa-paper-plane'></i></button>
+                            <span class='error-message' id='submit-error'></span>
+                        </div>
+
+                    </form>
+
+                    <div class="col-md-6">
+
+                        <p><i class='fas fa-envelope' style='font-size:25px; color: salmon'></i> &nbsp; <a href="mailto:akonneh16@alustudent.com?Subject=Hello%20Ahmed"
+                                target="_top">akonneh16@alustudent.com</a></p>
+                        <p><i class='fab fa-whatsapp' style='font-size:25px; color: forestgreen'></i> &nbsp;<a href="https://api.whatsapp.com/send?phone=231886566847">
+                                +231886566847 </a></p>
+                        <p><i class='fab fa-facebook' style='font-size:25px; color: darkblue'></i> &nbsp;<a href="https://www.facebook.com/ahmed.konneh.3">
+                                Facebook </a></p>
+                        <p><i class='fab fa-linkedin' style='font-size:25px; color: dodgerblue'></i> &nbsp;<a href="https://www.linkedin.com/in/ahmed-konneh-667a18111/">
+                                LinkedIn </a></p>
+                        <p><i class="fas fa-address-card" style='font-size:25px; color: seagreen'></i>&nbsp; ALC
+                            Student
+                            Campus, Mauritius</p>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3746.7552461752753!2d57.56033521453326!3d-20.102515648887522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x217c5534f9a0efdd%3A0xd3aa629838c03a0f!2sALC+Student+Campus!5e0!3m2!1sen!2sus!4v1546065075623"
+                            width="350" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+
+                    </div>
+                </div><br>
+            </div>
+            {% endblock %}

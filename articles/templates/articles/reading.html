@@ -1,0 +1,23 @@
+{% extends "articles/base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+
+        <!-- Blog Entries Column -->
+        <div class="col-md-8">
+
+            <br>
+            <div class="card mb-4">
+                <div class="card-body">
+                    {% autoescape off %}
+                    {{ article.yourArticleContent }}
+                    {% endautoescape %}
+                    <br><br>
+                    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                    <div class="addthis_inline_share_toolbox"></div><br>
+                    <h5>Read Next >> <a href="{% url 'reading' nextArticle.title %}">{{ nextArticle.title }}</a></h5>
+                </div>
+            </div>
+        </div>
+
+        {% endblock %}

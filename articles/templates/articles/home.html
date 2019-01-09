@@ -1,0 +1,46 @@
+{% extends "articles/baseforHome.html" %}
+
+{% block content %}
+
+
+<section class="jumbotron text-center">
+
+    <img src="{{ extras.profileImage.url }}" style="width: 15%; margin: auto" alt="" title="" media-simple="true">
+
+    <h1 class="jumbotron-heading">{{ extras.welcome }}</h1>
+    <p class="lead text-muted">{% autoescape off %}
+        {{ extras.welcomeMessage }}
+        {% endautoescape %}
+    </p>
+
+</section>
+
+<div class="album py-3 bg-light">
+    <div class="container">
+        <h2>Quick reading</h2><br>
+        <div class="row">
+            {% for mostRecent in mostRecents %}
+            <div class="col-md-4">
+                <div class="card mb-4 box-shadow">
+                    <img class="card-img-top" src="{{ mostRecent.mainImage.url }}" style="height:160px" alt="Card image cap">
+                    <div class="card-body">
+                        <p class="card-text">{{ mostRecent.title }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

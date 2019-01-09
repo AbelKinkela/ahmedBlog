@@ -1,0 +1,68 @@
+body{
+  background-image: url('bg8.png'),url('bg3.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: top left, top right;
+  background-attachment: scroll, fixed;
+}
+header {
+    height: 150px;
+    background-image: url('bann.png')
+}
+.articles{
+  background-image: url('bg8.png');
+    background-size: 100%;
+  background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+header h1{
+    color: white;
+}
+.navbar {
+  border-radius: 0;
+  transition: all 0.3s ease-out;
+}
+
+.affix {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+/* fixed to top styles */
+.affix.navbar {
+  background-color: #333;
+}
+.affix.navbar .nav-item>a,
+.affix.navbar .navbar-brand {
+    color: #fff;
+}
+
+.text-center{
+      padding: 60px;
+}
+
+.jumbotron {
+background: rgb(53, 140, 206, 0.1);
+color: #FFF;
+border-radius: 0px;
+}
+/* .jumbotron-sm { padding-top: 24px;
+padding-bottom: 24px; }
+.jumbotron small {
+color: #FFF;
+}
+.h1 small {
+font-size: 24px;
+} */
+
+.contactBg, album{
+  background-image: url('bg8.png');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+}
