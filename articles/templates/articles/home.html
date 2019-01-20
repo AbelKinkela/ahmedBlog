@@ -3,30 +3,49 @@
 {% block content %}
 
 
-<section class="jumbotron text-center">
+<section class="container pt-md-4">
+    <div class="row">
 
-    <img src="{{ extras.profileImage.url }}" style="width: 15%; margin: auto" alt="" title="" media-simple="true">
+        <img class="col-md-4" src="{{ extras.profileImage.url }}" style="height: 320px;" alt="" title="" media-simple="true">
 
-    <h1 class="jumbotron-heading">{{ extras.welcome }}</h1>
-    <p class="lead text-muted">{% autoescape off %}
-        {{ extras.welcomeMessage }}
-        {% endautoescape %}
-    </p>
+        <div class="col-md-8">
+            <h1 class="jumbotron-heading">{{ extras.welcome }}</h1>
+            <div>
+                {% autoescape off %}
+                {{ extras.welcomeMessage }}
+                {% endautoescape %}
+            </div>
+        </div>
+    </div>
+</section><br>
+<div class="py-3 bg-light">
+    <div class="row">
+        <form action="/action_page.php" style="max-width:500px;margin:auto">
 
-</section>
+            <div class="input-container">
 
+                <input class="input-field" type="text" placeholder="Subscribe to receive any of my updates" name="email">
+                <button type="submit" class="btn">Subscribe</button>
+            </div>
+
+        </form>
+    </div>
+</div>
 <div class="album py-3 bg-light">
     <div class="container">
         <h2>Quick reading</h2><br>
         <div class="row">
             {% for mostRecent in mostRecents %}
             <div class="col-md-4">
-                <div class="card mb-4 box-shadow">
-                    <img class="card-img-top" src="{{ mostRecent.mainImage.url }}" style="height:160px" alt="Card image cap">
-                    <div class="card-body">
-                        <p class="card-text">{{ mostRecent.title }}</p>
+                <a href="{% url 'reading' mostRecent.title %}">
+                    <div class="card mb-4 box-shadow">
+                        <img class="card-img-top" src="{{ mostRecent.mainImage.url }}" style="height:160px" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-text">{{ mostRecent.title }}</h4>
+                        </div>
+
                     </div>
-                </div>
+                </a>
             </div>
             {% endfor %}
 
